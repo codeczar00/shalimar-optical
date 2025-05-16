@@ -1,0 +1,36 @@
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Product from './pages/Product'
+import Cart from './pages/Cart'
+import Login from './pages/Login'
+import PlaceOrder from './pages/Placeorder'
+import Orders from './pages/Orders'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Eyeglasses from './pages/Eyeglasses'
+import Sunglasses from './pages/Sunglasses'
+import Lenses from './pages/Lenses'
+
+
+function App() {
+  return (
+    <div>
+        <Navbar />
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/sunglasses' element={<Sunglasses />} />
+            <Route path='/eyeglasses' element={<Eyeglasses />} />
+            <Route path='/lenses' element={<Lenses />} />
+            <Route path='/product/:productId' element={<Product />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/place-order' element={<PlaceOrder />} />
+            <Route path='/orders' element={<Orders />} />
+        </Routes>
+        <Footer />
+    </div>
+  )
+}
+
+export default App
