@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { ProductContext } from '../data/products';
 import '../data/products.css';
 import './Eyeglasses.css'
+import {Link} from 'react-router-dom'
 
 const Eyeglasses = () => {
 
@@ -73,12 +74,12 @@ const Eyeglasses = () => {
           <div className="card-container">
             {filteredItems.map(item => (
               <div className="card" key={item.id}>
-                <div><Link to={`product/${item.id}`}><img src={item.picture} className="card-img" alt={item.brand} />
+                <div><Link to={`/product/${item.id}`}><img src={item.picture} className="card-img" alt={item.brand} />
                 </Link></div>
                 <div className="card-body">
                   <h3 className="card-title">{item.brand} {item.model_no}</h3>
                   <p className="card-description">{item.description}</p>
-                  <p className="card-price">{item.price}</p>
+                  <p className="card-price">Rs: {item.price}</p>
                 </div>
               </div>
             ))}

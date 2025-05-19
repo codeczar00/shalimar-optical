@@ -11,12 +11,14 @@ import Footer from './components/Footer'
 import Eyeglasses from './pages/Eyeglasses'
 import Sunglasses from './pages/Sunglasses'
 import Lenses from './pages/Lenses'
+import ScrolltoTop from './components/ScrolltoTop'
 
 
 function App() {
   return (
     <div>
         <Navbar />
+        <ScrolltoTop/>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/sunglasses' element={<Sunglasses />} />

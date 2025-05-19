@@ -50,7 +50,7 @@ const Home = () => {
           <div className="card-body">
             <h3 className="card-title">{item.brand} {item.model_no}</h3>
             <p className="card-description">{item.description}</p>
-            <p className="card-price">{item.price}</p>
+            <p className="card-price">Rs: {item.price}</p>
           </div>
         </div>
       ))}
@@ -66,7 +66,7 @@ const Home = () => {
           <div className="card-body">
             <h3 className="card-title">{item.brand} {item.model_no}</h3>
             <p className="card-description">{item.description}</p>
-            <p className="card-price">{item.price}</p>
+            <p className="card-price">Rs: {item.price}</p>
           </div>
         </div>
       ))}

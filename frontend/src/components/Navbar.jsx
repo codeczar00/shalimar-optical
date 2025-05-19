@@ -1,13 +1,16 @@
 import './Navbar.css'
 import { Images } from '../data/images.js'
 import '../App.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import {CartContext} from '../data/CartProvider'
 
 
 function Navbar() {
 
+  const {cartItems} = useContext(CartContext)
   const [isopen, setIsOpen] = useState(false)
+  
 
   const handleMenu = () => {
     setIsOpen(!isopen)
@@ -55,7 +58,7 @@ function Navbar() {
             </button>
           </div>
           <div className='end-btn'>
-            <button className='cart-btn'><img src={Images.carticon} alt="cart" /><span>0</span></button>
+            <button className='cart-btn'><img src={Images.carticon} alt="cart" /><span>{cartItems.length}</span></button>
             <button className='login-btn'><img src={Images.login} alt="login" /></button>
           </div>
         </div>
