@@ -58,7 +58,7 @@ function Navbar() {
             </button>
           </div>
           <div className='end-btn'>
-            <button className='cart-btn'><img src={Images.carticon} alt="cart" /><span>{cartItems.length}</span></button>
+            <button className='cart-btn'><Link to={'/cart'}><img src={Images.carticon} alt="cart" /><span>{cartItems.length}</span></Link></button>
             <button className='login-btn'><img src={Images.login} alt="login" /></button>
           </div>
         </div>

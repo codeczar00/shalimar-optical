@@ -12,3 +12,14 @@ class Item(models.Model):
 
     def __str__(self):
         return f"{self.brand}-{self.model_no}"
+
+class Order(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    city = models.CharField(max_length=30)
+    address = models.TextField()
+    items = models.JSONField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order: {self.id} by {self.name}"

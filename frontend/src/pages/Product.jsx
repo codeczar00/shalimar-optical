@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useContext, useState, useEffect } from 'react'
 import { ProductContext } from '../data/products'
 import './Product.css'
@@ -10,6 +10,7 @@ const Product = () => {
   const { productId } = useParams()
   const [selectedOption, setSelectedOption] = useState(null)  //For selecting lenses
   const [prescriptionImage, setPrescriptionImage] = useState(null)
+  const [cartdone, setCartDone] = useState(null) //For showing button, move to checkout
 
   const product = items.find(item => item.id == productId)
   const [totalPrice, setTotalPrice] = useState(product?.price || 0);
@@ -52,10 +53,9 @@ const Product = () => {
       quantity: 1
     }
 
-    console.log(cartItem)
-
     setCartItems((prev) => [...prev, cartItem])
-    alert('Added to cart successfully!')
+    alert('Item added successfully!')
+    setCartDone(true)
   }
 
 
@@ -106,7 +106,7 @@ const Product = () => {
             </div>
           </div>
 
-          {selectedOption && (
+          {/* {selectedOption && (
             <div className="prescription-upload">
               <h3>Upload Prescription</h3>
               <input
@@ -125,7 +125,8 @@ const Product = () => {
                 </div>
               )}
             </div>
-          )}
+          )} */}
+          
           <p className="product-price">Total Rs: {totalPrice}</p>
           <button
             className="add-to-cart-btn"
@@ -134,6 +135,14 @@ const Product = () => {
           >
             Add to Cart
           </button>
+          {cartdone && (
+            <Link to={'/cart'}><button
+            className="add-to-cart-btn"
+          >
+            Visit Cart
+          </button>
+          </Link>
+          )}
         </div>
       </div>
     </div>
