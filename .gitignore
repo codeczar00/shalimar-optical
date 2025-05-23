@@ -2,3 +2,9 @@ frontend/ .env
 backend/ .env
 
 env/
+
+*.sqlite3
+*.pyc
+__pycache__/
+*.log
+*.json
